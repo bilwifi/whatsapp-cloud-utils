@@ -1,0 +1,59 @@
+{
+  "name": "@bilwifi/whatsapp-cloud-utils",
+  "version": "0.1.0",
+  "description": "Reusable Node.js/TypeScript utility client for Meta WhatsApp Cloud API",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bilwifi/whatsapp-cloud-utils.git"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "example:otp": "tsx examples/sendOtp.ts",
+    "example:template": "tsx examples/sendTemplate.ts",
+    "example:text": "tsx examples/sendText.ts",
+    "example:location": "tsx examples/sendLocation.ts",
+    "example:contacts": "tsx examples/sendContacts.ts",
+    "example:interactive": "tsx examples/sendInteractive.ts"
+  },
+  "keywords": [
+    "whatsapp",
+    "whatsapp-cloud-api",
+    "meta",
+    "typescript",
+    "nodejs",
+    "otp"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.13.8",
+    "dotenv": "^16.4.7",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vitest": "^2.1.9"
+  }
+}
